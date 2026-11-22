@@ -1,0 +1,3 @@
+viết mã xong tạo tệp bat chạy nó tạo lịch chạy tự động trong Windows Task Scheduler.
+tệp đó chạy xong ghi nhật ký vào một tệp "E:\NHACVIEC_PYTHON\NHAT_KY\lic_su.json" để biết máy đã làm gì với cái gì.
+hướng dẫn chậm nơi đặt mã chạy thử luôn. 
