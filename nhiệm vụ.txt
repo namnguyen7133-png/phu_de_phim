@@ -1,0 +1,37 @@
+Chào anh Nam, đại ca quy hoạch! Anh nói rất chuẩn, dặn cho **Phụ đề** là dặn về "nguyên liệu", còn dặn cho **Mã lập trình** là dặn về "cách chế tạo máy móc". Mã lập trình cần sự chuẩn xác tuyệt đối để các "bánh răng" (các đoạn code) khớp vào nhau mà không bị kẹt.
+
+Dưới đây là bộ **"Lời dặn AI chuyên biệt cho Mã Lập Trình"** để anh nạp vào kho. Bộ dặn này giúp AI hiểu rằng nó đang viết code cho một "Hệ thống tiếp sức" chứ không phải viết code chạy một lần rồi vứt.
+
+nên có giảng giải tại sao phải như thế , hài hước, thư giãn, tiếu lâm, truyện cười, sức mạnh, tình yêu, trí tuệ, trực giác, thẩm mỹ, tâm linh...với các nhiệm vụ của mã
+- Python 3.13 trở lên.
+- Chia thành nhiều module Python.
+- Mỗi module chỉ làm đúng một nhiệm vụ.
+- Có thể chạy độc lập.
+- Có Menu Tkinter điều khiển toàn bộ.
+- Có Resume khi dừng giữa chừng.
+- Không tải lại dữ liệu đã có.
+- Không tạo dữ liệu trùng.
+- Có log đầy đủ.
+- Có chống lỗi mạng.
+- Có chống treo.
+- Có Backup.
+- Có Cache.
+- Có kiểm tra Database.
+- Có khả năng chạy nhiều ngày liên tục.
+
+✅ Nhiệm vụ 1: Chọn file txt nhập link      → Hàm chon_file()
+✅ Nhiệm vụ 2: Chọn thư mục nhập link       → Hàm chon_thu_muc()
+✅ Nhiệm vụ 3: Đọc và trích xuất link       → Hàm lay_link_tu_text()
+✅ Nhiệm vụ 4: Chọn nơi lưu phụ đề          → Hàm chon_output_dir()
+✅ Nhiệm vụ 5: Tải phụ đề từ YouTube        → Hàm tai_phu_de()
+✅ Nhiệm vụ 6: Làm sạch phụ đề              → Hàm lam_sach_phu_de()
+✅ Nhiệm vụ 7: Nghỉ ngẫu nhiên chống 429    → Hàm nghi_ngau_nhien()
+✅ Nhiệm vụ 8: Âm báo thành công/lỗi        → Hàm phat_am_thanh()
+✅ Nhiệm vụ 9: Xử lý lỗi & popup thoát      → Hàm loi_nghiem_trong()
+✅ Nhiệm vụ 10: Thoát khẩn cấp              → Hàm thoat_khan_cap()
+các link có phụ đề thì tải link không có phụ đề đưa vào nơi riêng
+nơi chứa dạng phụ đề thì là vtt ở D:\VIDEO\yotube\taiphudecu , đã tải về xong bị mất tên tệp nay muốn tải lại tên tệp và các link của nó vào db , còn link để trong txt tất cả các thư mục con D:\VIDEO\yotube,
+"D:\VIDEO\yotube\da_tai_xong.txt","D:\VIDEO\yotube\danh_muc_phim.txt","D:\VIDEO\yotube\danh_sach_loi.txt", "D:\VIDEO\yotube\link_con_thieu.txt","D:\VIDEO\yotube\taiphudecu\processed_history.txt","D:\VIDEO\yotube\taiphudecu\luat_he_thong.json","D:\VIDEO\yotube\taiphudecu\m_config.json","D:\VIDEO\yotube\taiphudecu\debug_log.txt","D:\VIDEO\yotube\taiphudecu\links_loi.txt", D:\VIDEO\van_hoa_viet\sub_ca_dao, kim chỉ nam "D:\HE_THONG_HO_TRO_RA_QUYET_DINH\14. TÀI LIỆU THAM KHẢO (Reference)"
+viết mã xong tạo tệp bat chạy nó hoặc tạo lịch chạy tự động trong Windows Task Scheduler.
+tệp đó chạy xong ghi nhật ký vào một tệp "D:\lich_su.json" để biết máy đã làm gì với cái gì.
+hướng dẫn chậm nơi đặt mã chạy thử luôn. 

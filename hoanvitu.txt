@@ -1,0 +1,84 @@
+tôi muốn nó đọc các tệp vtt có sẵn  tải về so với các link phim trong D:\VIDEO\yotube cái nào link phim thì lấy tên và phụ đề nếu có phụ đề trùng với tệp vtt sẵn có D:\VIDEO\yotube\taiphudecu thì không tải phụ đề về nữa mà lấy tên phim và link cho vào bảng 1, phụ đề sẽ cho vào bảng 2 theo đúng yêu cầu của các mã đã viết xử lý các tệp, nếu chưa có phụ đề thì tải phụ đề về và tên phim link phim cập nhật tiếp vào sqlite.db hãy xem các mã tôi đưa có làm như thế yêu cầu không
+không có phụ đề thì ghi vào tệp riêng để xử lý sau có phụ đề mới tải và so sánh
+tất cả các bảng đều tương ứng các dòng câu thoại trong phim 
+bảng nào khác thì để riêng
+
+bảng 1
+tạo 13 cột
+1- cột tên phim viết tắt ten_phim, 2-cột link phim, 3-cột từ khóa của tên phim,cột 4,5,6,7,8,9,10 là các cột ký tự gồm tương ứng với các tên phim, cột 11 dịch tên phim, cột 12 ghi chú, cột 13 thời gian tổng của phim
+cột 4 lấy các ký tự đầu trong cột tên phim của các từ khóa 
+cột 5 lấy các ký tự thứ 2 cột tên phim của các từ khóa
+cột 6 lấy các ký tự thứ 3 cột tên phim của các từ khóa
+cột 7 lấy các ký tự thứ 4 cột tên phim của các từ khóa
+cột 8 lấy các ký tự thứ 5 cột tên phim của các từ khóa
+cột 9 lấy các ký tự thứ 6 cột tên phim của các từ khóa
+cột 10 lấy các ký tự thứ 7 cột tên phim của các từ khóa
+ví dụ : "tôi đi ăn cơm bây giờ" cột 4 sẽ lấy  't,đ,ă,c,b,gi', cột 5 sẽ lấy 'ô,i,n,ơ,â,ờ'...cột 6 lấy tiếp ký tự tiếp theo nếu không có thì để dấu gạch ngang '-,-...'
+
+bảng 2
+tạo 13 cột
+1- cột nội dung viết tắt là noi_dung của các câu thoại theo số lượng dòng tương ứng của từng bộ phim-theo thứ tự tên phim bảng 1, 2 gắn link phim cột 2 bảng 1 với thời gian bắt đầu của nội dung câu thoại cột 13 bảng 2 ,3 -cột từ khóa câu thoại 1,cột  4,5,6,7,8,9,10, cột ký tự gồm tương ứng với các câu hội thoại trong phim, cột 11 dịch nội dung, cột 12 ghi chú, cột 13 thời gian bắt đầu câu thoại.
+cột 4 lấy các ký tự đầu trong cột tên phim của các từ khóa 
+cột 5 lấy các ký tự thứ 2 cột noi_dung của các từ khóa
+cột 6 lấy các ký tự thứ 3 cột noi_dung của các từ khóa
+cột 7 lấy các ký tự thứ 4 cột noi_dung của các từ khóa
+cột 8 lấy các ký tự thứ 5 cột noi_dung của các từ khóa
+cột 9 lấy các ký tự thứ 6 cột noi_dung của các từ khóa
+cột 10 lấy các ký tự thứ 7 cột noi_dung của các từ khóa
+
+tạo web tìm kiếm 
+ví dụ : "tôi đi ăn cơm bây giờ" cột 4 sẽ lấy  't,đ,ă,c,b,gi', cột 5 sẽ lấy 'ô,i,n,ơ,â,ờ'...cột 6 lấy tiếp ký tự tiếp theo nếu không có thì để dấu gạch ngang '-,-...'
+
+tạo web tìm kiếm dạng hoán vị theo các từ khóa trong cột từ khóa, ví dụ "tôi đi ăn cơm bây giờ" hoán vị lần lượt ký tự đã tách ...có 6 từ thì ghép chuyển lần lượt các ký tự thành tôi đi = ti đôi, ăn cơm= căn ơm, bây giờ =  bơ giầy ...và tìm từ cột 4 đến cột .. 10 các ký tự của bảng 1 đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+tạo web tra tìm theo cột 4 đến cột 10 bảng 1 tên phim các ký tự đầu ghép với các từ khóa đuôi ví dụ trên "tôi đi ăn cơm bây giờ" = 1t,2đ,3a,4c,5b,6gi... ghép hoán vị với 1ôi, 2i, 3n,4ơm,5ây, 6ờ.. =  1t & 6ờ, 2đ & 1ôi, 3a & 2i,4c&3n, 5b&4ơm, 6gi& 5ây...= tờ đôi ai cn bơm giây và  tiếp tục hoán vị  1t&5ây, 2đ&6ờ,3a&1ôi,4c& 2i,5b&3n,6gi&4ơm...= tây đờ aôi ci bn giơm , đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+tạo web theo cột 4 đến cột 10 bảng 1 tìm gồm các ký tự đầu ghép với các từ khóa đuôi ví dụ trên "tôi đi ăn cơm bây giờ" = 1t,2đ,3a,4c,5b,6gi... ghép hoán vị với 1ôi, 2i, 3n,4ơm,5ây, 6ờ.. =  1t & 6ờ, 2đ & 1ôi, 3a & 2i,4c&3n, 5b&4ơm, 6gi& 5ây...= tờ đôi ai cn bơm giây và  tiếp tục hoán vị  1t&5ây, 2đ&6ờ,3a&1ôi,4c& 2i,5b&3n,6gi&4ơm...= tây đờ aôi ci bn giơm , đưa kết quả tương ứng cột noi_dung của các câu thoại.
+
+tạo web theo bảng 1 cột tên phim tìm theo cột 4 đến 10 ví dụ trên "tôi đi ăn cơm bây giờ" cột 1=tôi 2=tồi 3=tối 4=tổi 5=tỗi 6=tội, 7=đi, 8=đì, 9=đí, 10=đỉ, 11=đĩ 12=đị,....cùng tương ứng với cột từ khóa trong db gốc và khi tìm từ trong các cột này sẽ ra cột câu  thoại đoạn phim tương ứng bảng db gốc, đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+tạo web theo cột tên phim tra cột 4 đến cột 10 bảng bán đồ on lai -bán đài a lo- bán đái alo..hoán vị tất cả các cụm các dấu đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+tạo web theo bảng 1
+cách hoán vị ví dụ bán đồ on lai -bán đài a lo- bán đái alo..hoán vị tất cả các cụm các dấu đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+tạo web theo bảng 1 theo cột tên phim dấu của các nguyên âm có dấu để tìm các từ khóa có dấu huyền, hoặc dấu sắc, đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+nối từ : 2 từ đầu với đuôi các từ khóa trong từ khóa đầu bảng đến hết bảng đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+thống kê các cụm từ hay dùng trong số lần lặp lại tài liệu đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+nối các ký tự trong các cột ký tự theo người dùng nhập vào đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+kết nối từ điển trong máy tính tìm từ trái nghĩa với các từ khóa trong câu thoại đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+tìm chữ nhập vào gán 5 dấu thanh còn lại cho nó: đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+hon da = hòn da,hón da,hỏn da,hõn da, họn da.
+hon dà = hon dá....lần lượt với không dấu , huyền ,sắc hỏi, ngã, nặng thêm vào
+
+thêm  6 dấu vào db tìm các từ khóa cùng dấu  thành bài văn câu chuyện đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+thêm cách tìm các ký tự cùng nhau thành bài văn câu chuyện  đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+cột tất cả các chữ cái đầu vần A,B,C..Z 
+
+thống kê các ký tự thứ tự từ 0 đến 9,a,à,á,ả,ã,ạ,ă,ằ,ắ,ẳ,ẵ,ặ......y,z = 100 ký tự 
+
+thống kê các nốt nhạc từ A,B,C,D,E,E,G thăng giáng tới si 3 quãng 21 nốt rồi quay lại...lên theo từ 1 đến 100 theo các chữ tương ứng đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+a,e,i,o,u tìm từ tiếp theo bằng luật ngũ hành xuôi ngược đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+12 chữ a,e,i,o,u có dấu tìm theo nhị hợp, tam hợp...đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+tìm từ theo hợp âm tìm từ theo game nhạc 1-3-5 đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+vòng hợp âm1427 đưa kết quả tương ứng dòng đó cột 1 bảng 1.
+
+tất cả cách tìm trên tạo web tìm trong bảng 2 cột 4 đến cột 10
+
+tất cả các bảng đều tương ứng các dòng câu thoại trong phim 
+
+các công thức từ lúc khởi nghiệp tới tự do tài chính tìm trong html
+
+
+

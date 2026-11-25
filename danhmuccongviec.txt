@@ -1,0 +1,27 @@
+======================================================
+QUẢN LÝ TIẾN ĐỘ DỰ ÁN - DANH MỤC TỔNG THỂ
+======================================================
+
+[✓] 01_CAU_HINH.py
+[✓] 02_GHI_NHAT_KY.py
+[✓] 03_DUNG_CHUNG.py
+[✓] 04_CONG_CU.py
+[✓] 05_CO_SO_DU_LIEU.py
+[✓] 06_THU_LAI.py
+[v] 07_00_MENU.py
+[v] 08_01_QUET_PHU_DE_VTT.py
+[v] 09_02_QUET_TAP_TIN_TXT.py
+[v] 10_03_LOC_LINK_CAN_TAI.py
+[v] 11_04_TAI_PHU_DE.py
+[v] 12_05_THU_LAI_LOI.py
+[v] 13_06_PHAN_TICH_VTT.py
+[v] 14_07_GHEP_NHIEU_NGON_NGU.py
+[V] 15_08_TAO_CO_SO_DU_LIEU.py
+[V] 16_09_NAP_DU_LIEU.py
+[V] 17_10_TAO_CHI_MUC.py
+[V] 18_11_KIEM_TRA_CO_SO_DU_LIEU.py
+[V] 19_12_BAO_CAO_THONG_KE.py
+
+------------------------------------------------------
+CHI TIẾT LỊCH SỬ PHÁT TRIỂN
+------------------------------------------------------
